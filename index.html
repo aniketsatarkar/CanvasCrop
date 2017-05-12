@@ -37,6 +37,12 @@
                     });
         }
 
+        function get_file()
+        {
+            alert( $('#fileInput').val());
+        }
+
+
     </script>
 
 </head>
@@ -46,10 +52,11 @@
 
     <div id="first_cropme" class="cropme" style="width: 800px; height: 450px;"></div>
     <br/>
-    <input type="button" value="Print Data" onclick="print_data()" />
+    <input type="button" value="print_data()" onclick="print_data()" />
     <br/>
-    <input type="button" value="upload_file" onclick="upload_image()" />
-
+    <input type="button" value="upload_file()" onclick="upload_image()" />
+    <br/>
+    <input type="button" value="get_file()" onclick="get_file()" />
     <script>
         // Init Simple Cropper
         $('.cropme').simpleCropper();
