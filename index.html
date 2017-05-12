@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Cropper</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!-- Css files-->
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style-example.css"/>
+    <link rel="stylesheet" type="text/css" href="css/jquery.Jcrop.css"/>
+
+    <!-- Js files-->
+    <script type="text/javascript" src="scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.Jcrop.js"></script>
+    <script type="text/javascript" src="scripts/jquery.SimpleCropper.js"></script>
+
+    <script type="text/javascript">
+
+        // function print image data using alert box
+        // NOTE: Delete it...
+        function print_data()
+        {
+            img_data = $('#first_cropme').find('img').attr("src");
+            alert(img_data);
+        }
+
+        // upload the image to the server using
+        function upload_image()
+        {
+            $.post('target_address',
+                    {
+                        img_data: $('#first_cropme').find('img').attr("src")
+                    },
+                    function(data, status)
+                    {
+                        alert(status);
+                    });
+        }
+
+    </script>
+
+</head>
+<body>
+
+<div class="simple-cropper-images">
+
+    <div id="first_cropme" class="cropme" style="width: 800px; height: 450px;"></div>
+    <br/>
+    <input type="button" value="Print Data" onclick="print_data()" />
+    <br/>
+    <input type="button" value="upload_file" onclick="upload_image()" />
+
+    <script>
+        // Init Simple Cropper
+        $('.cropme').simpleCropper();
+    </script>
+
+</div>
+
+</body>
+</html>
