@@ -27,14 +27,15 @@
         // upload the image to the server using
         function upload_image()
         {
-            $.post('target_address',
-                    {
-                        img_data: $('#first_cropme').find('img').attr("src")
-                    },
-                    function(data, status)
-                    {
-                        alert(status);
-                    });
+            $.post('upload_target.php',
+            {
+                img_data: $('#first_cropme').find('img').attr("src")
+            },
+            function(data, status)
+            {
+                alert('DATA : ' + data);
+                alert(status);
+            });
         }
 
         function get_file()
@@ -57,6 +58,7 @@
     <input type="button" value="upload_file()" onclick="upload_image()" />
     <br/>
     <input type="button" value="get_file()" onclick="get_file()" />
+
     <script>
         // Init Simple Cropper
         $('.cropme').simpleCropper();

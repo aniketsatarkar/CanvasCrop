@@ -19,3 +19,10 @@ function base64_to_jpeg($base64_string, $output_file)
 
 	return $output_file;
 }
+
+function get_mime_type($img_str)
+{
+	$pos  = strpos($img_str, ';');
+	$mime =  explode(':', substr($img_str, 0, $pos))[1];
+	return $ext  = explode('/', $mime)[1];
+}
