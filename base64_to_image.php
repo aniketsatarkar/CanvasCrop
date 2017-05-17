@@ -20,6 +20,8 @@ function base64_to_jpeg($base64_string, $output_file)
 	return $output_file;
 }
 
+// function to get file extension from image-string.
+// return extension string, for Example : png, jpg
 function get_mime_type($img_str)
 {
 	$pos  = strpos($img_str, ';');
